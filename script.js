@@ -7,8 +7,9 @@ const h1ele = document.createElement('h1')
 h1ele.innerText='Title'
 let leftRow= document.querySelector('.left-row')
 // output.appendChild(eleDiv)
-
+let elementType 
 let createSubmitField=function(){
+    elementType= 'h1'
     const eleDiv =document.createElement('div')
     eleDiv.classList.add('ele-div')
     eleDiv.classList.add('submit-field')
@@ -19,11 +20,13 @@ let createSubmitField=function(){
     const textArea=document.createElement('textarea')
     //Create btn for input box
     const submitBtn=document.createElement('button')
-    submitBtn.addEventListener('submit', (e)=>{
+    inputForm.addEventListener('submit', (e)=>{
+        console.log(elementType)
         e.preventDefault()
-        
         const eleDiv = document.createElement('div')
-        eleDiv.innerText= e.target.value
+        const innerElement = document.createElement(elementType)
+        innerElement.innerText =textArea.value
+        eleDiv.appendChild(innerElement)
         eleDiv.classList.add('ele-div')
         output.appendChild(eleDiv)
     })
