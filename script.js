@@ -72,3 +72,11 @@ let addNote=function(){
     })
 }
 
+let addArrow = function(){
+    const arrow=document.createElement('img')
+    arrow.src="arrow.png"
+    output.appendChild(arrow)
+}
+
+$(".arrow").resizable().rotate()
+

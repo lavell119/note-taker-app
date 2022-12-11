@@ -145,3 +145,7 @@ form textarea {
     width: 60px;
     background: red;
 }
+
+.arrow {
+    border: 1px solid black;
+}
