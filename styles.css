@@ -147,10 +147,13 @@ form textarea {
 .ui-icon { background-image: url("") !important; }
 
 .arrow-wrapper {
+    width: 100px;
+    height: 20px;
 }
 
 .arrow {
-
+    width: 100px;
+    height: 20px;
     /* transform: rotate(90deg); */
 }
 

@@ -83,6 +83,23 @@ let addArrow = function(){
     document.body.appendChild(arrowWrapper)
     $(arrowWrapper).draggable()
     $(arrow).resizable()
+
+    let tmpAnimation = 0
+    $(arrowWrapper).click(function() {
+        var element = $(arrowWrapper)
+        tmpAnimation = tmpAnimation + 10
+
+        $({degrees: tmpAnimation-10}).animate({degrees: tmpAnimation}, {
+            duration: 2000,
+            step: function (now) {
+                element.css({
+                    transform: 'rotate(' + now + 'deg)'
+                })
+            }
+        })
+
+    })
+
 //     arrow.addEventListener('click', function(){
 //     arrow.style.transform = 'rotate(90deg)'
 // })
