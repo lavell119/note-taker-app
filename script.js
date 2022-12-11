@@ -8,18 +8,21 @@ h1ele.innerText='Title'
 let leftRow= document.querySelector('.left-row')
 // output.appendChild(eleDiv)
 let elementType 
-let createSubmitField=function(){
-    elementType= 'h1'
+let createSubmitField=function(type){
+    elementType= type
     const eleDiv =document.createElement('div')
     eleDiv.classList.add('ele-div')
     eleDiv.classList.add('submit-field')
-
     const submitField=document.createElement('div')
     const inputForm=document.createElement('form')
+    const eleTitle=document.createElement('h3')
+    eleTitle.innerText=elementType + ' Content'
+    eleDiv.appendChild(eleTitle)
     //Create text-area for input box
     const textArea=document.createElement('textarea')
     //Create btn for input box
     const submitBtn=document.createElement('button')
+    submitBtn.innerText='Submit'
     inputForm.addEventListener('submit', (e)=>{
         console.log(elementType)
         e.preventDefault()
@@ -36,54 +39,19 @@ let createSubmitField=function(){
     inputForm.appendChild(submitBtn)
     eleDiv.appendChild(inputForm)
     output.appendChild(eleDiv)
-
 }
 
 
 let addTitle=function(){
-    //Create ele-div
-    const eleDiv =document.createElement('div')
-    //Create input-box
-    const input=document.createElement('div')
-    //Add class to input box
-    input.classList.add('input-field')
-    //Create form for input box
-    const inputForm=document.createElement('form')
-    //Create text-area for input box
-    const textArea=document.createElement('textarea')
-    //Create btn for input box
-    const submitBtn=document.createElement('button')
-    //Append elements to input box
-    input.appendChild(inputForm)
-    input.appendChild(textArea)
-    input.appendChild(submitBtn)
-    //Add classes to ele-div
-    eleDiv.classList.add('ele-div')
-    eleDiv.classList.add('title')
-    const titleElement = document.createElement('h1')
-    titleElement.innerText='Title'
-    eleDiv.appendChild(titleElement)
-    eleDiv.appendChild(input)    
-    output.appendChild(eleDiv)
-
+    createSubmitField('h1')
 }
 
 let addSubTitle=function(){
-    const eleDiv =document.createElement('div')
-    eleDiv.classList.add('ele-div')
-    const subTitleElement = document.createElement('h3')
-    subTitleElement.innerText='Subtitle'
-    eleDiv.appendChild(subTitleElement)
-    output.appendChild(eleDiv)
+    createSubmitField('h3')   
 }
 
 let addParagraph=function(){
-    const eleDiv =document.createElement('div')
-    eleDiv.classList.add('ele-div')
-    const paragraphElement = document.createElement('p')
-    paragraphElement.innerText='This is a paragraph...'
-    eleDiv.appendChild(paragraphElement)
-    output.appendChild(eleDiv)
+    createSubmitField('p')
 }
 
 let addSpacer=function(){
