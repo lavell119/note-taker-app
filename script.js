@@ -23,12 +23,13 @@ let createSubmitField=function(){
     inputForm.addEventListener('submit', (e)=>{
         console.log(elementType)
         e.preventDefault()
-        const eleDiv = document.createElement('div')
+        const eleDiv2 = document.createElement('div')
         const innerElement = document.createElement(elementType)
         innerElement.innerText =textArea.value
-        eleDiv.appendChild(innerElement)
-        eleDiv.classList.add('ele-div')
-        output.appendChild(eleDiv)
+        eleDiv2.appendChild(innerElement)
+        eleDiv2.classList.add('ele-div')
+        output.appendChild(eleDiv2)
+        eleDiv.remove()
     })
     submitBtn.classList.add('submit-btn')
     inputForm.appendChild(textArea)
