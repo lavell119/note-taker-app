@@ -73,10 +73,20 @@ let addNote=function(){
 }
 
 let addArrow = function(){
+    const arrowWrapper=document.createElement('div')
+    $(arrowWrapper).draggable()
     const arrow=document.createElement('img')
+    arrow.classList.add('arrow')
     arrow.src="arrow.png"
-    output.appendChild(arrow)
+
+    arrowWrapper.appendChild(arrow)
+    output.appendChild(arrowWrapper)
+    $(arrowWrapper).draggable()
+    $(arrow).resizable()
+
+
+
 }
 
-$(".arrow").resizable().rotate()
+$(".arrow").resizable()
 

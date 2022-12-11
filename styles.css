@@ -148,4 +148,7 @@ form textarea {
 
 .arrow {
     border: 1px solid black;
+    background-image: "";
 }
+
+.ui-icon { background-image: url("") !important; }
