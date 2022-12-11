@@ -90,7 +90,7 @@ let addArrow = function(){
         tmpAnimation = tmpAnimation + 10
 
         $({degrees: tmpAnimation-10}).animate({degrees: tmpAnimation}, {
-            duration: 2000,
+            duration: 1000,
             step: function (now) {
                 element.css({
                     transform: 'rotate(' + now + 'deg)'
