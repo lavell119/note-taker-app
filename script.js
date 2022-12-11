@@ -76,17 +76,50 @@ let addArrow = function(){
     const arrowWrapper=document.createElement('div')
     $(arrowWrapper).draggable()
     const arrow=document.createElement('img')
+    arrowWrapper.classList.add('arrow-wrapper')
     arrow.classList.add('arrow')
     arrow.src="arrow.png"
-
     arrowWrapper.appendChild(arrow)
-    output.appendChild(arrowWrapper)
+    document.body.appendChild(arrowWrapper)
     $(arrowWrapper).draggable()
     $(arrow).resizable()
+//     arrow.addEventListener('click', function(){
+//     arrow.style.transform = 'rotate(90deg)'
+// })
+    // let rotateArrow = function(arrow){
+    //     arrow.style.transform = 'rotate(90deg)'
+    // }
+    // rotateArrow(arrow)
+}
 
+let addBox= function() {
+    const box = document.createElement('div')
+    box.classList.add('box')
+    const form = document.createElement('form')
+    const boxInput=document.createElement('input')
+    const button = document.createElement('button')
+    button.innerText='Submit'
+    form.appendChild(button)
+    form.appendChild(boxInput)
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        box.remove()
+        const box2=document.createElement('div')
+        box2.classList.add('box')
+        document.body.appendChild(box2)
+        box2.innerText="2048028"
+        $(box2).resizable()
+        $(box2).draggable()
 
-
+    })
+    box.appendChild(form)
+    document.body.appendChild(box)
+    $(box).resizable()
+    $(box).draggable()
 }
 
 $(".arrow").resizable()
+$(".arrow-wrapper").draggable()
 
+$(".box").resizable()
+$(".box").draggable()

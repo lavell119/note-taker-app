@@ -46,11 +46,9 @@ button {
 
 .ele-div {
     width: 90%;
-    border: 1px black solid;
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
-    background: yellow;
 }
 
 .title {
@@ -146,9 +144,18 @@ form textarea {
     background: red;
 }
 
-.arrow {
-    border: 1px solid black;
-    background-image: "";
+.ui-icon { background-image: url("") !important; }
+
+.arrow-wrapper {
 }
 
-.ui-icon { background-image: url("") !important; }
+.arrow {
+
+    /* transform: rotate(90deg); */
+}
+
+.box {
+    height: 200px;
+    width: 500px;
+    background: rgb(202, 202, 202);
+}
