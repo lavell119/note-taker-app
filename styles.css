@@ -12,7 +12,7 @@ h1 {
 body {
     width: 100%;
     background: rgb(219, 219, 219);
-    
+    position: relative;
 }
 
 .controls {
@@ -48,7 +48,6 @@ button {
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
-    background: yellow;
     position: relative;
 }
 
@@ -74,7 +73,7 @@ p {
 .output-rows-grid {
     display: grid;
     width: 900px;
-    height: 900px;
+    height: 500px;
     margin: auto;
     grid-template-columns: 1fr 4fr 1fr;
 }
@@ -143,7 +142,8 @@ form textarea {
 .submit-btn {
     height: 20px;
     width: 60px;
-    background: red;
+    border: 1px solid grey;
+    font-size: 11px;
 }
 
 .ui-icon { background-image: none !important; }
@@ -151,6 +151,8 @@ form textarea {
 .arrow-wrapper {
     width: 100px;
     height: 20px;
+    position: absolute;
+    bottom: 600px;
 }
 
 .arrow {
@@ -175,7 +177,7 @@ form textarea {
 .text-box {
     width: 200px;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(168, 168, 168);
 }
 
 .delete-btn {
@@ -187,4 +189,11 @@ form textarea {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    z-index:5959;
+}
+
+.ele-title {
+    font-weight: normal;
+    font-size: 15px;
 }

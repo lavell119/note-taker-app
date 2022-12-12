@@ -2,11 +2,6 @@ const output = document.querySelector('.output')
 let note = document.querySelector('.note')
 const deleteBtn = document.querySelector('.delete-btn')
 
-deleteBtn.addEventListener('click', () => {
-    let btn=deleteBtn 
-    $(btn).parent().remove()
-})
-
 
 const eleDiv =document.createElement('div')
 eleDiv.classList.add('ele-div')
@@ -25,6 +20,7 @@ let createSubmitField=function(type){
     const inputForm=document.createElement('form')
     const eleTitle=document.createElement('h3')
     eleTitle.innerText=elementType + ' Content'
+    eleTitle.classList.add('ele-title')
     eleDiv.appendChild(eleTitle)
     //Create text-area for input box
     const textArea=document.createElement('textarea')
@@ -59,15 +55,15 @@ let createSubmitField=function(type){
 
 //Add element button functions
 let addTitle=function(){
-    createSubmitField('h1')
+    createSubmitField('H1')
 }
 
 let addSubTitle=function(){
-    createSubmitField('h3')   
+    createSubmitField('H3')   
 }
 
 let addParagraph=function(){
-    createSubmitField('p')
+    createSubmitField('P')
 }
 
 let addSpacer=function(){
@@ -95,8 +91,17 @@ let addArrow = function(){
     arrowWrapper.classList.add('arrow-wrapper')
     arrow.classList.add('arrow')
     arrow.src="arrow.png"
+    const deleteBtn = document.createElement('div')
+        deleteBtn.innerHTML="&#10006;"
+        deleteBtn.classList.add('delete-btn')
+        
+    arrowWrapper.appendChild(deleteBtn)
     arrowWrapper.appendChild(arrow)
     document.body.appendChild(arrowWrapper)
+    deleteBtn.addEventListener('click', () => {
+        let btn=deleteBtn 
+        $(btn).parent().remove()
+    })
     $(arrowWrapper).draggable()
     $(arrow).resizable()
 
