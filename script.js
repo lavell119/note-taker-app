@@ -150,6 +150,9 @@ let addBox= function() {
         paragraph.innerText=boxInput.value
         box2.classList.add('text-box')
         box2.appendChild(paragraph)
+        box2.addEventListener('dblclick', function(){
+            box2.classList.toggle("hide")
+        })
         const deleteBtn = document.createElement('div')
         deleteBtn.innerHTML="&#10006;"
         deleteBtn.classList.add('delete-btn')
@@ -192,3 +195,4 @@ $(".arrow-wrapper").draggable()
 
 $(".box").resizable()
 $(".box").draggable()
+

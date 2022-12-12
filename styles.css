@@ -225,6 +225,10 @@ form textarea {
     border: 3px solid green;
 }
 
+.hide {
+    border: 0px solid transparent;
+}
+
 @media (max-width: 800px){
 
     .output {
