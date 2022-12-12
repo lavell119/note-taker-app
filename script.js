@@ -107,7 +107,7 @@ let addArrow = function(){
         
     arrowWrapper.appendChild(deleteBtn)
     arrowWrapper.appendChild(arrow)
-    document.body.appendChild(arrowWrapper)
+    output.appendChild(arrowWrapper)
     deleteBtn.addEventListener('click', () => {
         let btn=deleteBtn 
         $(btn).parent().remove()
@@ -169,7 +169,7 @@ deleteBtn.addEventListener('click', () => {
 
     })
     box.appendChild(form)
-    document.body.appendChild(box)
+    output.appendChild(box)
     $(box).resizable()
     $(box).draggable()
 }
