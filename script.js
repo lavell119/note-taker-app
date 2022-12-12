@@ -152,6 +152,13 @@ let addBox= function() {
     $(box).draggable()
 }
 
+let complete = function() {
+    let deleteBtns = document.querySelectorAll('.delete-btn')
+    deleteBtns.forEach(btn => btn.remove())
+    $(output).printThis()
+}
+
+
 $(".arrow").resizable()
 $(".arrow-wrapper").draggable()
 
