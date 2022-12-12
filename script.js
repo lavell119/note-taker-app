@@ -150,6 +150,15 @@ let addBox= function() {
         paragraph.innerText=boxInput.value
         box2.classList.add('text-box')
         box2.appendChild(paragraph)
+        const deleteBtn = document.createElement('div')
+        deleteBtn.innerHTML="&#10006;"
+        deleteBtn.classList.add('delete-btn')
+
+deleteBtn.addEventListener('click', () => {
+        let btn=deleteBtn 
+        $(btn).parent().remove()
+    })
+        box2.appendChild(deleteBtn)
         document.body.appendChild(box2)
 
         $(box2).resizable()
