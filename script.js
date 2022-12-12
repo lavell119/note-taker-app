@@ -119,12 +119,15 @@ let addBox= function() {
     form.appendChild(button)
     form.appendChild(boxInput)
     form.addEventListener('submit', function(e){
+        const paragraph=document.createElement('p')
         e.preventDefault()
         box.remove()
         const box2=document.createElement('div')
-        box2.classList.add('box')
+        paragraph.innerText=boxInput.value
+        box2.classList.add('text-box')
+        box2.appendChild(paragraph)
         document.body.appendChild(box2)
-        box2.innerText="2048028"
+
         $(box2).resizable()
         $(box2).draggable()
 
