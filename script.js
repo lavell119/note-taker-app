@@ -2,7 +2,7 @@ const output = document.querySelector('.output')
 let note = document.querySelector('.note')
 const deleteBtn = document.querySelector('.delete-btn')
 
-deleteBtn.addEventListener('click', (e) => {
+deleteBtn.addEventListener('click', () => {
     let btn=deleteBtn 
     $(btn).parent().remove()
 })
@@ -34,13 +34,21 @@ let createSubmitField=function(type){
     inputForm.addEventListener('submit', (e)=>{
         console.log(elementType)
         e.preventDefault()
+        const deleteBtn = document.createElement('div')
+        deleteBtn.innerText="Delete"
+        deleteBtn.classList.add('delete-btn')
         const eleDiv2 = document.createElement('div')
         const innerElement = document.createElement(elementType)
         innerElement.innerText =textArea.value
+        eleDiv2.appendChild(deleteBtn)
         eleDiv2.appendChild(innerElement)
         eleDiv2.classList.add('ele-div')
         output.appendChild(eleDiv2)
         eleDiv.remove()
+        deleteBtn.addEventListener('click', () => {
+            let btn=deleteBtn 
+            $(btn).parent().remove()
+        })
     })
     submitBtn.classList.add('submit-btn')
     inputForm.appendChild(textArea)
