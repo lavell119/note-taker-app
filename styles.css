@@ -232,6 +232,14 @@ form textarea {
     border: 0px solid transparent;
 }
 
+.bold-btn {
+    border: 1px solid black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 @media (max-width: 800px){
 
     .output {
