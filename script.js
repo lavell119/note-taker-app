@@ -70,6 +70,15 @@ let addParagraph=function(){
 let addSpacer=function(){
     const spacer =document.createElement('div')
     spacer.classList.add('spacer')
+    const deleteBtn = document.createElement('div')
+        deleteBtn.innerHTML="&#10006;"
+        deleteBtn.classList.add('delete-btn')
+
+deleteBtn.addEventListener('click', () => {
+        let btn=deleteBtn 
+        $(btn).parent().remove()
+    })
+    spacer.appendChild(deleteBtn)
     output.appendChild(spacer)
 }
 
