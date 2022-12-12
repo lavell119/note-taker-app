@@ -35,7 +35,7 @@ let createSubmitField=function(type){
         console.log(elementType)
         e.preventDefault()
         const deleteBtn = document.createElement('div')
-        deleteBtn.innerText="Delete"
+        deleteBtn.innerHTML="&#10006;"
         deleteBtn.classList.add('delete-btn')
         const eleDiv2 = document.createElement('div')
         const innerElement = document.createElement(elementType)

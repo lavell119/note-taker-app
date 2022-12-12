@@ -48,6 +48,8 @@ button {
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
+    background: yellow;
+    position: relative;
 }
 
 .title {
@@ -179,5 +181,10 @@ form textarea {
 .delete-btn {
     height: 20px;
     width: 20px;
-    background: red;
+    background: rgb(167, 167, 167);
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
