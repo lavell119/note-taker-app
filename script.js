@@ -162,7 +162,7 @@ deleteBtn.addEventListener('click', () => {
         $(btn).parent().remove()
     })
         box2.appendChild(deleteBtn)
-        document.body.appendChild(box2)
+        output.appendChild(box2)
 
         $(box2).resizable()
         $(box2).draggable()
@@ -177,7 +177,6 @@ deleteBtn.addEventListener('click', () => {
 let complete = function() {
     let deleteBtns = document.querySelectorAll('.delete-btn')
     deleteBtns.forEach(btn => btn.remove())
-    $(output).printThis()
 }
 
 //Print PDF
@@ -188,6 +187,7 @@ let printPDF=function(){
 }
 
 printBtn.addEventListener('click', printPDF())
+$(output).sortable()
 
 
 $(".arrow").resizable()
