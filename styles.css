@@ -144,7 +144,7 @@ form textarea {
     background: red;
 }
 
-.ui-icon { background-image: url("") !important; }
+.ui-icon { background-image: none !important; }
 
 .arrow-wrapper {
     width: 100px;
@@ -152,8 +152,8 @@ form textarea {
 }
 
 .arrow {
-    width: 100px;
-    height: 20px;
+    width: 300px;
+    height: 60px;
     /* transform: rotate(90deg); */
 }
 
