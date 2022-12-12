@@ -1,6 +1,7 @@
 const output = document.querySelector('.output')
 let note = document.querySelector('.note')
 const deleteBtn = document.querySelector('.delete-btn')
+const printBtn = document.querySelector('#print-btn')
 
 
 const eleDiv =document.createElement('div')
@@ -157,6 +158,15 @@ let complete = function() {
     deleteBtns.forEach(btn => btn.remove())
     $(output).printThis()
 }
+
+//Print PDF
+let printPDF=function(){
+    $('#print-btn').click(function(){
+    $('.output').printThis()
+    })
+}
+
+printBtn.addEventListener('click', printPDF())
 
 
 $(".arrow").resizable()
