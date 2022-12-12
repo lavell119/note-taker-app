@@ -1,13 +1,21 @@
 const output = document.querySelector('.output')
 let note = document.querySelector('.note')
+const deleteBtn = document.querySelector('.delete-btn')
+
+deleteBtn.addEventListener('click', (e) => {
+    let btn=deleteBtn 
+    $(btn).parent().remove()
+})
+
 
 const eleDiv =document.createElement('div')
 eleDiv.classList.add('ele-div')
 const h1ele = document.createElement('h1')
 h1ele.innerText='Title'
 let leftRow= document.querySelector('.left-row')
-// output.appendChild(eleDiv)
-let elementType 
+
+
+//CreateSubmitField function
 let createSubmitField=function(type){
     elementType= type
     const eleDiv =document.createElement('div')
@@ -41,7 +49,7 @@ let createSubmitField=function(type){
     output.appendChild(eleDiv)
 }
 
-
+//Add element button functions
 let addTitle=function(){
     createSubmitField('h1')
 }
@@ -100,13 +108,6 @@ let addArrow = function(){
 
     })
 
-//     arrow.addEventListener('click', function(){
-//     arrow.style.transform = 'rotate(90deg)'
-// })
-    // let rotateArrow = function(arrow){
-    //     arrow.style.transform = 'rotate(90deg)'
-    // }
-    // rotateArrow(arrow)
 }
 
 let addBox= function() {
