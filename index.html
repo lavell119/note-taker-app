@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="controls">
+   <div class="controls">
         <button id="add-title" onClick=addTitle()>+<br> Title</button>
         <button id="add-subtitle" onClick=addSubTitle()>+<br> Subtitle</button>
         <button id="add-spacer" onClick=addSpacer()>+ <br>Spacer</button>
@@ -21,26 +21,18 @@
         <button id="add-box" onClick=addBox()>+ <br>Box</button>
         <button id="done-btn" onClick=complete()>Done</button>
         <button id="print-btn" onClick=printPDF()>Print</button>
-        <button id="add-page-height" onClick=addPage()>+<br> + Page</button>
-        <button id="dev-page-height" onClick=decPage()>+<br> - Page</button>
+        <button id="add-page-height" onClick=addPage()>+<br>Page</button>
+        <button id="dev-page-height" onClick=decPage()>-<br>Page</button>
 
-    </div>    
-    
-    <div class="output-rows-grid">
-        <div class="left-row">
+    </div>     
+    <div class="output-wrapper">
+        <div class="output">
+
         </div>
-        <div class="output-wrapper">
-            <div class="output">
-
-            </div>
-            <div class="output-line">
+         <div class="output-line">
                
-            </div>
-       </div>
-       <div></div>
-
-    </div>
-    
+        </div>
+    </div>     
 
 </body>
 <script src="jquery.js" type="text/javascript"></script>

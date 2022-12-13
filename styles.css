@@ -13,10 +13,8 @@ h1 {
 
 
 body {
-    width: 100%;
     background: rgb(219, 219, 219);
     position: relative;
-    width: 100vw;
 }
 
 .controls {
@@ -46,6 +44,7 @@ button {
     flex-direction: column;
     position: relative;
     height: 900px;
+    margin: auto;
 }
 
 .ele-div {
@@ -224,7 +223,9 @@ form textarea {
 }
 
 .output-wrapper {
-    width: 100%;
+    width: 700px;
+    margin: auto;
+    background: white;
 }
 
 
@@ -247,6 +248,6 @@ form textarea {
 @media (max-width: 800px){
 
     .output {
-        width: 100%;
+        width: 650px;
     }
 }
