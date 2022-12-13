@@ -203,6 +203,14 @@ let printPDF=function(){
     })
 }
 
+let addPage = function(){
+    output.style.height = (output.offsetHeight + 50) + "px"
+}
+
+let decPage = function(){
+    output.style.height = (output.offsetHeight - 50) + "px"
+}
+
 printBtn.addEventListener('click', printPDF())
 $(output).sortable()
 

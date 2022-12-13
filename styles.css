@@ -45,6 +45,7 @@ button {
     justify-content: flex-start;
     flex-direction: column;
     position: relative;
+    height: 900px;
 }
 
 .ele-div {
@@ -53,6 +54,7 @@ button {
     display: flex;
     align-items: center;
     position: relative;
+    height: 40px;
 }
 
 .title {
@@ -78,6 +80,7 @@ p {
     display: grid;
     width: 700px;
     height: 500px;
+    background: yellow;
     margin: auto;
     grid-template-columns: 0fr 4fr 0fr;
 }
@@ -186,6 +189,7 @@ form textarea {
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    position: absolute;
 }
 
 .delete-btn {
