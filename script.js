@@ -1,8 +1,11 @@
 const output = document.querySelector('.output')
 let note = document.querySelector('.note')
 const deleteBtn = document.querySelector('.delete-btn')
-const printBtn = document.querySelector('#print-btn')
 
+const printBtn = document.querySelector('#print-btn')
+let lastElement=''
+
+let divHeight = 30
 
 const eleDiv =document.createElement('div')
 eleDiv.classList.add('ele-div')
@@ -10,6 +13,9 @@ const h1ele = document.createElement('h1')
 h1ele.innerText='Title'
 let leftRow= document.querySelector('.left-row')
 
+let appendElement = function(element){
+    element.style.height=(lastElement.offsetHeight + 50) + 'px'
+}
 
 //CreateSubmitField function
 let createSubmitField=function(type){
@@ -42,16 +48,24 @@ let createSubmitField=function(type){
         eleDiv2.classList.add('ele-div')
         output.appendChild(eleDiv2)
         eleDiv.remove()
+        eleDiv2.style.top = divHeight + 'px'
+
+
+        divHeight = divHeight +50
         deleteBtn.addEventListener('click', () => {
             let btn=deleteBtn 
             $(btn).parent().remove()
+            divHeight=divHeight - 50
         })
     })
     submitBtn.classList.add('submit-btn')
     inputForm.appendChild(textArea)
     inputForm.appendChild(submitBtn)
     eleDiv.appendChild(inputForm)
+    eleDiv.style.top = (divHeight + 100) + 'px'
     output.appendChild(eleDiv)
+    lastElement=eleDiv
+
 }
 
 //Add element button functions
@@ -74,12 +88,18 @@ let addSpacer=function(){
         deleteBtn.innerHTML="&#10006;"
         deleteBtn.classList.add('delete-btn')
 
-deleteBtn.addEventListener('click', () => {
+    deleteBtn.addEventListener('click', () => {
         let btn=deleteBtn 
+        divHeight=divHeight - 50
         $(btn).parent().remove()
     })
     spacer.appendChild(deleteBtn)
+    spacer.style.top = divHeight + 'px'
+    console.log(divHeight)
+    divHeight=divHeight+50
     output.appendChild(spacer)
+    lastElement=spacer
+
 }
 
 let addNote=function(){
@@ -160,7 +180,7 @@ let addBox = function() {
         const paragraph=document.createElement('p')
         e.preventDefault()
         box.remove()
-        const box2=document.createElement('div')
+        const box2=document.createElement('span')
         paragraph.innerText=boxInput.value
         box2.classList.add('text-box')
         if(isBold==='true'){

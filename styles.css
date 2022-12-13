@@ -37,7 +37,7 @@ button {
 
 .output {
     padding-top: 10px;
-    gap: 10px;
+    gap: 40px;
     width: 100%;
     background: white;
     display: flex;
@@ -53,8 +53,9 @@ button {
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
-    position: relative;
+    position: absolute;
     height: 40px;
+    background: green;
 }
 
 .title {
@@ -68,8 +69,8 @@ p {
 
 .spacer {
     width: 90%;
-    height: 30px;
-    
+    height: 40px;
+    position: absolute;
 }
 
 .spacer:hover {
@@ -189,7 +190,7 @@ form textarea {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    position: absolute;
+    position: positive;
 }
 
 .delete-btn {
