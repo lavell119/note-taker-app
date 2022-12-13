@@ -246,8 +246,42 @@ form textarea {
 }
 
 @media (max-width: 800px){
+    .output-wrapper {
+        width: 700px;
+    }
+
 
     .output {
         width: 650px;
+    }
+}
+
+@media (max-width: 700px){
+    .output-wrapper {
+        width: 650px;
+    }
+
+    .output {
+        width: 600px;
+    }
+}
+
+@media (max-width: 660px){
+    .output-wrapper {
+        width: 650px;
+    }
+
+    .output {
+        width: 600px;
+    }
+}
+
+@media (max-width: 600px){
+    .output-wrapper {
+        width: 600px;
+    }
+
+    .output {
+        width: 550px;
     }
 }
