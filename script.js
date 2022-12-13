@@ -52,11 +52,25 @@ let createSubmitField=function(type){
 
 
         divHeight = divHeight +50
-        deleteBtn.addEventListener('click', () => {
+        deleteBtn.addEventListener('click', (e) => {
             let btn=deleteBtn 
             $(btn).parent().remove()
             divHeight=divHeight - 50
-        })
+            let children =output.children
+            var arr = [].slice.call(children)
+            console.log(arr)
+            // arr.forEach(child =>console.log(parseInt((child.style.top), 10)))
+
+            arr.forEach(child => {
+                console.log(parseInt(e.target.parentElement.style.top))
+                console.log('clicked ele offset top' + '=' + e.target.parentElement.style.top)
+                console.log(child.offsetTop)
+                if(child.offsetTop > parseInt(e.target.parentElement.style.top)) {
+                    child.style.top = (child.offsetTop - 50) + 'px'
+                    console.log(child.style.top)
+                }
+            })
+        }) 
     })
     submitBtn.classList.add('submit-btn')
     inputForm.appendChild(textArea)
