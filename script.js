@@ -51,7 +51,7 @@ let createSubmitField=function(type){
         eleDiv2.style.top = divHeight + 'px'
 
 
-        divHeight = divHeight +50
+        divHeight = (divHeight+eleDiv2.offsetHeight) +50
         deleteBtn.addEventListener('click', (e) => {
             let btn=deleteBtn 
             $(btn).parent().remove()
