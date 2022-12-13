@@ -102,10 +102,11 @@ let addSpacer=function(){
         deleteBtn.innerHTML="&#10006;"
         deleteBtn.classList.add('delete-btn')
 
-    deleteBtn.addEventListener('click', () => {
+    deleteBtn.addEventListener('click', (e) => {
         let btn=deleteBtn 
         divHeight=divHeight - 50
         $(btn).parent().remove()
+        moveElementsDown(e)
     })
     spacer.appendChild(deleteBtn)
     spacer.style.top = divHeight + 'px'
@@ -244,6 +245,19 @@ let addPage = function(){
 let decPage = function(){
     output.style.height = (output.offsetHeight - 50) + "px"
 }
+
+let moveElementsDown = (e) => {
+    let children = output.children
+    var arr = [].slice.call(children)
+    arr.forEach(child => {
+        if(child.offsetTop > parseInt(e.target.parentElement.style.top)) {
+            child.style.top = (child.offsetTop - 50) + "px"
+        }
+    })
+}
+
+
+
 
 printBtn.addEventListener('click', printPDF())
 $(output).sortable()
