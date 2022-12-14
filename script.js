@@ -1,6 +1,8 @@
 const output = document.querySelector('.output')
 let note = document.querySelector('.note')
 const deleteBtn = document.querySelector('.delete-btn')
+const imageInput = document.querySelector('#image-input')
+
 
 const printBtn = document.querySelector('#print-btn')
 let lastElement=''
@@ -49,7 +51,8 @@ let createSubmitField=function(type){
         output.appendChild(eleDiv2)
         eleDiv.remove()
         eleDiv2.style.top = divHeight + 'px'
-
+        $(eleDiv2).resizable()
+        $(eleDiv2).draggable()
 
         divHeight = (divHeight+eleDiv2.offsetHeight) +10
         deleteBtn.addEventListener('click', (e) => {
@@ -61,12 +64,12 @@ let createSubmitField=function(type){
     })
     submitBtn.classList.add('submit-btn')
     inputForm.appendChild(textArea)
+   
     inputForm.appendChild(submitBtn)
     eleDiv.appendChild(inputForm)
     eleDiv.style.top = (divHeight + 100) + 'px'
     output.appendChild(eleDiv)
     lastElement=eleDiv
-
 }
 
 //Add element button functions
@@ -243,6 +246,21 @@ let moveElementsDown = (e) => {
     })
 }
 
+imageInput.classList.add('red')
+//image uploader
+    imageInput.addEventListener('change', function(){
+        const image = new Image(100,100)
+        const file = imageInput.files[0]
+        console.log(file)
+
+        const reader = new FileReader()
+        reader.onload = (e) => {
+            image.src = e.target.value.result
+            console.log(image)
+            output.appendChild(image)
+        }
+    }
+    )
 
 
 
@@ -256,3 +274,5 @@ $(".arrow-wrapper").draggable()
 $(".box").resizable()
 $(".box").draggable()
 
+$(".ele-div").resizable()
+$(".ele-div").draggable()
