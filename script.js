@@ -42,7 +42,7 @@ let createSubmitField=function(type){
         deleteBtn.classList.add('delete-btn')
         const eleDiv2 = document.createElement('div')
         const innerElement = document.createElement(elementType)
-        innerElement.innerText =textArea.value
+        innerElement.innerHTML =textArea.value
         eleDiv2.appendChild(deleteBtn)
         eleDiv2.appendChild(innerElement)
         eleDiv2.classList.add('ele-div')
@@ -183,7 +183,7 @@ let addBox = function() {
         e.preventDefault()
         box.remove()
         const box2=document.createElement('span')
-        paragraph.innerText=boxInput.value
+        paragraph.innerHTML=boxInput.value
         box2.classList.add('text-box')
         if(isBold==='true'){
             box2.classList.add('bold')

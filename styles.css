@@ -13,7 +13,7 @@ h1 {
 
 
 body {
-    background: rgb(219, 219, 219);
+    background: black;
     position: relative;
 }
 
@@ -23,6 +23,11 @@ body {
     align-items: center;
     gap: 10px;
     height: 90px;
+}
+
+.controls button {
+    background: white;
+    color: blue;
 }
 
 button {
@@ -48,12 +53,11 @@ button {
 }
 
 .ele-div {
-    width: 90%;
+    width: 80%;
     padding: 0 10px 0 10px;
     display: flex;
     align-items: center;
     position: absolute;
-    background: yellow;
 }
 
 .title {
@@ -126,10 +130,10 @@ p {
 .submit-field {
     display: flex;
     flex-direction: column;
-    background: yellow;
     width: 80%;
     align-items: center;
     justify-content: center;
+    background: green;
 }
 
 form {
@@ -168,9 +172,19 @@ form textarea {
 }
 
 .box {
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.box textarea {
     height: 200px;
-    width: 500px;
-    background: rgb(202, 202, 202);
+}
+
+.box button {
+    height: 40px;
+    width: 60px;
+    font-size: 13px;
 }
 
 .output-line {
@@ -226,6 +240,7 @@ form textarea {
     width: 700px;
     margin: auto;
     background: white;
+    border: 5px solid blue;
 }
 
 
@@ -243,6 +258,10 @@ form textarea {
 
 .bold {
     font-weight: bold;
+}
+
+textarea {
+    height: 300px;
 }
 
 @media (max-width: 800px){
