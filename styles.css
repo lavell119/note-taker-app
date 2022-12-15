@@ -207,9 +207,7 @@ form textarea {
     font-size: 16px;
     position: positive;
 }
-.red {
-    background-color: red;
-}
+
 
 .delete-btn {
     height: 20px;
@@ -268,6 +266,9 @@ form textarea {
 
 textarea {
     height: 300px;
+}
+.image-wrap {
+    background: blue;
 }
 
 @media (max-width: 800px){

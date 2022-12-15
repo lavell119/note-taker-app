@@ -249,16 +249,30 @@ let moveElementsDown = (e) => {
 imageInput.classList.add('red')
 //image uploader
     imageInput.addEventListener('change', function(){
+        const imageWrapper=document.createElement('div')
+        imageWrapper.classList.add('image-wrap')
         const image = new Image(100,100)
+        imageWrapper.appendChild(image)
+        const deleteBtn = document.createElement('div')
+        deleteBtn.innerHTML="&#10006;"
+        deleteBtn.classList.add('delete-btn')
+        deleteBtn.addEventListener('click', (e) => {
+            let btn=deleteBtn 
+            $(btn).parent().remove()
+        })
+        imageWrapper.appendChild(deleteBtn)
         const file = imageInput.files[0]
         console.log(file)
-
         const reader = new FileReader()
-        reader.onload = (e) => {
-            image.src = e.target.value.result
+        reader.onload = (event) => {
+            image.src = event.target.result
             console.log(image)
-            output.appendChild(image)
+            output.appendChild(imageWrapper)
+            $(image).resizable()
+            $(imageWrapper).draggable()
+            
         }
+        reader.readAsDataURL(file)
     }
     )
 
