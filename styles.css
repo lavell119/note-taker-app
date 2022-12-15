@@ -59,7 +59,6 @@ button {
     display: flex;
     align-items: center;
     position: absolute;
-    background: yellow;
 }
 
 .title {
@@ -193,7 +192,7 @@ form textarea {
 .output-line {
     width: 100%;
     height: 20px;
-    background: black;
+    background: rgb(119, 119, 119);
     float: bottom;
 }
 
@@ -207,7 +206,6 @@ form textarea {
     font-size: 16px;
     position: positive;
 }
-
 
 .delete-btn {
     height: 20px;
@@ -267,8 +265,13 @@ form textarea {
 textarea {
     height: 300px;
 }
+
 .image-wrap {
     background: blue;
+}
+
+#image-input {
+   
 }
 
 @media (max-width: 800px){

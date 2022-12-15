@@ -52,7 +52,9 @@ let createSubmitField=function(type){
         eleDiv.remove()
         eleDiv2.style.top = divHeight + 'px'
         $(eleDiv2).resizable()
-        $(eleDiv2).draggable()
+        $(eleDiv2).draggable({
+            axis: "y"
+        })
 
         divHeight = (divHeight+eleDiv2.offsetHeight) +10
         deleteBtn.addEventListener('click', (e) => {
@@ -251,7 +253,9 @@ imageInput.classList.add('red')
     imageInput.addEventListener('change', function(){
         const imageWrapper=document.createElement('div')
         imageWrapper.classList.add('image-wrap')
-        const image = new Image(100,100)
+        const image = document.createElement('img')
+        image.style.height=''
+        image.style.width=''
         imageWrapper.appendChild(image)
         const deleteBtn = document.createElement('div')
         deleteBtn.innerHTML="&#10006;"
@@ -267,6 +271,8 @@ imageInput.classList.add('red')
         reader.onload = (event) => {
             image.src = event.target.result
             console.log(image)
+            console.log(image.style.cssText.height)
+
             output.appendChild(imageWrapper)
             $(image).resizable()
             $(imageWrapper).draggable()
